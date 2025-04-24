@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}       % set main text size
+\usepackage[letterpaper,                % set paper size to letterpaper. change to a4paper for resumes outside of North America
+top=0.5in,                          % specify top page margin
+bottom=0.5in,                       % specify bottom page margin
+left=0.5in,                         % specify left page margin
+right=0.5in]{geometry}              % specify right page margin
+                       
+\usepackage{XCharter}               % set font. comment this line out if you want to use the default LaTeX font Computer Modern
+\usepackage[T1]{fontenc}            % output encoding
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage{enumitem}               % enable lists for bullet points: itemize and \item
+\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{titlesec}               % enable section title customization
+\raggedright                        % disable text justification
+\pagestyle{empty}                   % disable page numbering
+
+% ensure PDF output will be all-Unicode and machine-readable
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% format section headings: bolding, size, white space above and below
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
+
+% format bullet points: size, white space above and below, white space between bullets
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\setlist[itemize]{itemsep=-2pt, leftmargin=12pt, topsep=7pt} %%% Test various topsep values to fix vertical spacing errors
+
+% resume starts here
+\begin{document}
+
+% name
+\centerline{\Huge Ioannis Kyriazis}
+
+\vspace{5pt}
+
+% contact information
+\centerline{\href{mailto:ioannis@kyriazis.software}{ioannis@kyriazis.software} | \href{https://ioannis.ky}{ioannis.ky} | \href{https://github.com/ikyriazis}{github.com/ikyriazis}}
+
+\vspace{-10pt}
+
+% skills section
+\section*{Skills}
+\textbf{Languages:} JavaScript, Java, Python, SQL, C, C++, C\# \\
+\textbf{Frameworks:} Node.js, React, React Native, Angular, Svelte, Astro, Spring Boot \\
+\textbf{Tooling:} git, Docker, Kubernetes, Airflow, Jenkins, Shell, nginx, Swagger \\
+\textbf{Databases:} MySQL, MongoDB, Postgres, Redis, ElasticSearch, GraphQL
+
+
+\vspace{-6.5pt}
+
+% experience section
+\section*{Experience}
+\textbf{Senior Software Engineer,} {VRSCO} -- Worcester, MA \hfill May 2023 -- Present \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Architected and deployed a highly scalable cloud infrastructure using nginx, Linode, pm2, and Cloudflare that handles 145K+ monthly requests, ensuring 99.9\% uptime.
+  \item Designed, developed, and published a cross‐platform app (iOS and Android) using React Native that includes QR code registration, multi‐platform sign‐in, email verification, and real-time messaging for item recovery.
+  \item Developed a secure backend server using Node.js and MySQL featuring real‐time chat via WebSockets, robust and secure password management, automated email notifications, and integrated payment processing.
+  \item Overhauled the existing React e-commerce site using Astro and Svelte to improve performance and aesthetic. Features dynamic product display, cart logic, and secure Stripe integration.
+  \item Integrated Endato API on e-commerce site to provide a free privacy test to prospects to increase engagement.
+\end{itemize}
+
+\textbf{Software Engineer,} {UnitedHealth Group} -- Boston, MA \hfill June 2021 -- May 2023 \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Streamlined the data ingestion process for 5K+ repositories across three datastores, automating work flows using Airflow and reducing runtime and data consumption by 90\% through delta processing.
+  \item Optimized data pipelines via horizontal scaling with the Dask Python library, cutting down process by 10x.
+  \item Refactored legacy table web component to local comnponent and integrated within Angular project.
+  \item Added frontend capabilities to sort/filter data and generate Excel files using Angular, NG Prime, and SheetJS.
+  \item Designed, implemented and published APIs using Swagger and Spring Boot to share data with external teams.
+  \item Built and deployed API Docker containers to Kubernetes using Jenkins to ensure robustness and scalability.
+  \item Wrote a Python script to generate JWTs for API testing to cut out 3 of 5 steps and led to team-wide adoption.
+  
+\end{itemize}
+
+% \textbf{Job Title,} \href{https://www.fstl1992.com/}{Company} -- City, ST \hfill XXXX -- XXXX \\
+% \vspace{-9pt}
+
+\vspace{-18.5pt}
+
+% projects section
+\section*{Projects}
+\textbf{Solfege Mental Model Game} \hfill \href{https://dofalare.com}{dofalare.com} \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Built full stack web application with Astro, Svelte, Node.js, Javascript, and MySQL to allow users to practice their mental model of the solfege system with easy and hard mode.
+  \item Automatically calculate and display user game statistics and allow users to submit their name along with their score to the public leaderboard.
+\end{itemize}
+
+\textbf{CanvasKicks Portfolio Page} \hfill \href{https://canvaskicks.store}{canvaskicks.store} \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Built secure admin dashboard which includes custom CMS to support automatic post creation and message inbox from potential clients using HTML, CSS, JavaScript, MongoDB, and Node.js.
+  \item Facilitated safe community interactions by only allowing authenticated users to submit comments.
+\end{itemize}
+
+\textbf{Hospital Kiosk Application} \hfill \href{https://github.com/IKyriazis/BWHKioskApp/commits?author=IKyriazis}{github.com/IKyriazis/BWHKioskApp} \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Achieved best application in the class competition to apply Agile development methodologies and design patterns in Java to create a pathfinding kiosk application, map builder, room scheduler, etc.
+  \item Implemented two‐factor authentication, RFID card authentication using Arduino and integrating with Java via Serial Communication, salt/hashed password storage, and an internal transportation request menu.
+\end{itemize}
+
+% alternate formatting for projects section
+% \section*{Projects}
+% \begin{itemize}
+%   \item \textbf{QuantSoftware Toolkit:} Open source Python library for data analysis and machine learning for finance
+%   \item \textbf{GitHub Visualization:} Data visualization of Git Log data using D3 to analyze project trends over time
+%   \item \textbf{Recommendation System:} Music and movie recommender systems using collaborative filtering on public datasets
+%   \item \textbf{Mac Setup:} Book that gives step by step instructions on setting up developer environment on Mac OS
+% \end{itemize}
+
+\vspace{-18.5pt}
+
+% education section
+\section*{Education}
+\textbf{Worcester Polytechnic Institute} -- BS: Computer Science, Minors: Electrical Eng., Prof. Writing \hfill May 2021
+
+\end{document}
